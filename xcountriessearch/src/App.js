@@ -13,13 +13,10 @@ function App() {
         setData(resp.data);
       } catch (err) {
         console.error("Error fetching data: ", err);
-        // Set data to an empty array or display an error message in the UI
-        setData([]);
       }
     };
     getCountries();
   }, []);
-
 
   const filterData = data.filter((country) =>
     country.name.common.toLowerCase().includes(searchData.toLowerCase())
